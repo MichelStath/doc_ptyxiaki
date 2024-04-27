@@ -1,0 +1,20 @@
+- **Class Name**: `FastContactsActivity`
+- **Extends**: `AppCompatActivity`
+- **Implements**: `CustomAdapter.ContactClickListener`
+- **Responsibility**: Manages the UI and functionality for displaying and adding fast contacts.
+- **Attributes**:
+    - `recyclerView`: RecyclerView for displaying the list of contacts.
+    - `customAdapter`: CustomAdapter instance for populating the RecyclerView with contact data.
+    - `db`: Instance of `Helper.ContactDbHelper` for interacting with the contact database.
+- **Methods**:
+    - `onCreate(Bundle savedInstanceState)`: Initializes the activity, sets the layout, initializes UI components, and updates the RecyclerView.
+    - `onDeleteContact(Models.Contact contact)`: Called when a contact is deleted from the RecyclerView. Updates the RecyclerView.
+    - `addNewContact(View view)`: Called when the "Add Contact" button is clicked. Launches the contact picker activity to select a new contact.
+    - `UpdateRecyclerView()`: Updates the RecyclerView with the latest contact data.
+    - `pickContactLauncher`: Activity result launcher for handling the contact picker result. When a contact is selected, it retrieves the contact details and adds it to the database.
+- **Additional Notes**:
+    - The activity layout (`R.layout.activity_fast_contacts`) contains a RecyclerView for displaying contacts and a button for adding new contacts.
+    - Contacts are retrieved using the `ContactsContract` content provider.
+    - When a contact is selected from the contact picker, its details (name and phone number) are extracted and added to the database using `db.addContact()`.
+    - A toast message is displayed to indicate that the contact has been added successfully.
+    - The RecyclerView is updated after adding a new contact to reflect the changes.

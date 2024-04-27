@@ -1,0 +1,54 @@
+- **Package**: `com.example.activities.ptyxiakilauncher.classes`
+- **Class Name**: `CustomAdapter1`
+- **Responsibility**: Manages the RecyclerView adapter for displaying fast messages. It handles user interactions such as updating, sending, and deleting messages.
+- **Constructor**:
+    - `public CustomAdapter1(Context context, ArrayList<FastMessage> messages, MessageClickListener listener)`: Initializes the CustomAdapter1 with the context, list of fast messages, and a listener for message click events.
+        - `context`: The context of the calling activity.
+        - `messages`: The list of fast messages to display.
+        - `listener`: A listener for message click events.
+- **Methods**:
+    - `onCreateViewHolder(ViewGroup parent, int viewType)`: Inflates the layout for each message row.
+    - `onBindViewHolder(MyViewHolder1 holder, int position)`: Binds fast message data to the views within each row and sets click listeners.
+    - `getItemCount()`: Returns the total number of fast messages.
+- **Inner Class**:
+    - `MyViewHolder1`: Represents a single fast message row view holder.
+        - `message_id_txt`: TextView for displaying message ID.
+        - `message_title_txt`: TextView for displaying message title.
+        - `message_content_txt`: TextView for displaying message content.
+        - `mainLayout1`: LinearLayout serving as the root layout for the message row.
+- **Dependencies**:
+    - `android.widget.TextView`
+    - `android.widget.LinearLayout`
+    - `android.widget.Toast`
+    - `android.app.AlertDialog`
+    - `android.content.Context`
+    - `android.content.Intent`
+    - `android.content.IntentFilter`
+    - `android.os.Build`
+    - `android.view.LayoutInflater`
+    - `android.view.View`
+    - `android.view.ViewGroup`
+    - `androidx.localbroadcastmanager.content.LocalBroadcastManager`
+    - `androidx.recyclerview.widget.RecyclerView`
+    - `com.example.activities.ptyxiakilauncher.UpdateFastMessageActivity`
+    - `com.example.activities.ptyxiakilauncher.R`
+    - `com.example.activities.ptyxiakilauncher.classes.Models.FastMessage`
+    - `java.util.ArrayList`
+    - `java.util.List`
+- **Resource Usage**:
+    - `R.layout.message_row`
+    - `R.id.message_id_txt`
+    - `R.id.message_title_txt`
+    - `R.id.message_content_txt`
+    - `R.id.mainLayout1`
+- **Listener Interface**:
+    - `MessageClickListener`: Interface for handling fast message interaction events.
+        - `onDeleteMessage(FastMessage message)`: Method invoked when a message is deleted.
+        - `onUpdateMessage(FastMessage message)`: Method invoked when a message is updated.
+- **Broadcast Receiver**:
+    - `updateFinishedReceiver`: Handles broadcast messages indicating the completion of a message update operation.
+        - Displays a toast message when an update is finished.
+        - Invokes `onUpdateMessage()` method of the listener.
+- **Additional Notes**:
+    - Utilizes a `Helper.MessageDbHelper` for database operations related to fast messages.
+    - Registers and unregisters a `BroadcastReceiver` to handle update completion notifications.

@@ -1,0 +1,42 @@
+- **Package**: `com.example.activities.ptyxiakilauncher.classes`
+- **Class Name**: `LocationHelper`
+- **Responsibility**: Provides helper methods for managing location-related tasks, such as requesting location permissions, receiving location updates, and checking GPS status.
+- **Static Constants**:
+    - `LOCATION_PERMISSION_REQUEST_CODE`: Request code for location permission.
+- **Static Variables**:
+    - `fusedLocationClient`: FusedLocationProviderClient instance for accessing location services.
+    - `lastKnownLocation`: Variable to store the last known location.
+    - `locationCallback`: LocationCallback instance for receiving location updates.
+- **Static Methods**:
+    - `requestLocationPermission(Activity activity)`: Requests location permission if not granted already, otherwise requests location updates.
+    - `requestLocationUpdates(Activity activity)`: Requests location updates from the FusedLocationProviderClient.
+    - `getLastKnownLocation()`: Returns the last known location.
+    - `onRequestPermissionsResult(int requestCode, @NonNull int[] grantResults, Activity activity)`: Handles the result of the location permission request.
+    - `stopLocationUpdates()`: Stops receiving location updates.
+    - `isGpsEnabled(Context context)`: Checks if GPS is enabled on the device.
+    - `showGpsSettings(Activity activity)`: Displays the GPS settings screen to enable GPS.
+- **Dependencies**:
+    - `android.Manifest`
+    - `android.app.Activity`
+    - `android.content.Context`
+    - `android.content.Intent`
+    - `android.content.pm.PackageManager`
+    - `android.location.Location`
+    - `android.location.LocationManager`
+    - `android.os.Looper`
+    - `android.provider.Settings`
+    - `androidx.annotation.NonNull`
+    - `androidx.core.app.ActivityCompat`
+    - `androidx.core.content.ContextCompat`
+    - `com.google.android.gms.location.FusedLocationProviderClient`
+    - `com.google.android.gms.location.LocationCallback`
+    - `com.google.android.gms.location.LocationRequest`
+    - `com.google.android.gms.location.LocationResult`
+    - `com.google.android.gms.location.LocationServices`
+    - `com.google.android.gms.location.Priority`
+- **Additional Notes**:
+    - Uses FusedLocationProviderClient for location services.
+    - Handles location permission requests and updates.
+    - Provides methods to check GPS status and prompt the user to enable GPS.
+    - Supports stopping location updates when not needed.
+    - Suitable for managing location-related tasks in Android applications.

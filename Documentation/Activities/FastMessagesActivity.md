@@ -1,0 +1,20 @@
+- **Class Name**: `FastMessagesActivity`
+- **Extends**: `AppCompatActivity`
+- **Implements**: `CustomAdapter1.MessageClickListener`
+- **Responsibility**: Manages the UI and functionality for displaying and adding fast messages.
+- **Attributes**:
+    - `recyclerView`: RecyclerView for displaying the list of messages.
+    - `customAdapter`: CustomAdapter1 instance for populating the RecyclerView with message data.
+    - `db`: Instance of `Helper.MessageDbHelper` for interacting with the message database.
+    - `startActivityForResultLauncher`: Activity result launcher for handling the result of starting the `AddFastMessageActivity`.
+- **Methods**:
+    - `onCreate(Bundle savedInstanceState)`: Initializes the activity, sets the layout, initializes UI components, registers the activity result launcher, and updates the RecyclerView.
+    - `onDeleteMessage(Models.FastMessage message)`: Called when a message is deleted from the RecyclerView. Updates the RecyclerView.
+    - `onUpdateMessage(Models.FastMessage message)`: Called when a message is updated. Updates the RecyclerView.
+    - `addNewMessage(View view)`: Called when the "Add Message" button is clicked. Launches the `AddFastMessageActivity` to add a new message.
+    - `UpdateRecyclerView1()`: Updates the RecyclerView with the latest message data.
+- **Additional Notes**:
+    - The activity layout (`R.layout.activity_fast_messages`) contains a RecyclerView for displaying messages and a button for adding new messages.
+    - Messages are retrieved from the message database using `db.getAllMessages()`.
+    - When a message is added, deleted, or updated, the RecyclerView is updated to reflect the changes.
+    - The `startActivityForResultLauncher` is used to handle the result of starting the `AddFastMessageActivity`. When a new message is added, the RecyclerView is updated accordingly.

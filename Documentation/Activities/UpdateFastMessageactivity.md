@@ -1,0 +1,15 @@
+- **Class Name**: `UpdateFastMessageActivity`
+- **Extends**: `AppCompatActivity`
+- **Responsibility**: Manages the updating of a fast message in the database.
+- **Attributes**:
+    - `db`: Instance of `Helper.MessageDbHelper` for database operations.
+    - `currentFastMessage`: Variable to store the fast message being updated.
+    - `messTitle`, `messContent`: EditText fields for entering the title and content of the fast message.
+- **Methods**:
+    - `onCreate(Bundle savedInstanceState)`: Initializes the activity, sets the layout, retrieves the fast message to be updated, initializes the UI components, and sets the EditText fields with the current fast message data.
+    - `updateMessageToDB(View view)`: Called when the "Update" button is clicked. Checks if both title and content fields are filled, updates the fast message in the database, and finishes the activity.
+    - `finishAndReturn()`: Creates an intent with a custom action to notify listeners about the completion of the update operation and sends a broadcast. Then finishes the activity.
+- **Additional Notes**:
+    - The activity layout (`R.layout.activity_update_fast_message`) contains EditText fields for entering the title and content of the fast message and a button for updating the message.
+    - Upon receiving the intent, the activity retrieves the serialized `FastMessage` object from the intent extras to obtain the details of the fast message being updated.
+    - After updating the fast message in the database, the activity sends a broadcast with a custom action to notify any interested components about the update.

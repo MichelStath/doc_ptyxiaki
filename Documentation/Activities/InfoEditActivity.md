@@ -1,0 +1,16 @@
+- **Class Name**: `InfoEditActivity`
+- **Extends**: `AppCompatActivity`
+- **Responsibility**: Manages the UI and functionality for editing user information and saving it to SharedPreferences.
+- **Attributes**:
+    - **SharedPreferences Keys**: Constants defining the keys used for storing user information in SharedPreferences.
+    - `sharedpreferences`: SharedPreferences instance for storing user information.
+    - `userName`, `userSurname`, `userPhone`, `userAmka`, `userAfm`, `userIdNum`: Variables to store user information retrieved from SharedPreferences.
+    - `nameET`, `surnameET`, `phoneET`, `afmET`, `amkaET`, `idNumET`: EditText fields for entering user information.
+- **Methods**:
+    - `onCreate(Bundle savedInstanceState)`: Initializes the activity, sets the layout, and initializes the UI components.
+    - `saveInfo(View view)`: Called when the "Save" button is clicked. Saves the entered user information to SharedPreferences.
+    - `InitializeEnvironment()`: Initializes the SharedPreferences instance, retrieves user information, and sets the EditText fields with the retrieved data.
+- **Additional Notes**:
+    - The activity layout (`R.layout.activity_info_edit`) contains EditText fields for entering user information and a button for saving the changes.
+    - User information is retrieved from SharedPreferences and displayed in the corresponding EditText fields.
+    - When the "Save" button is clicked, the entered user information is saved to SharedPreferences using the defined keys.

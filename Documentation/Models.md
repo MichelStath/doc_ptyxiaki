@@ -1,0 +1,39 @@
+- **Package**: `com.example.activities.ptyxiakilauncher.classes`
+- **Class Name**: `Models`
+- **Responsibility**: Contains model classes representing Contact and FastMessage.
+- **Nested Class**: `Contact`
+    - **Responsibility**: Represents a contact with attributes contactID, contactName, and contactNumber.
+    - **Attributes**:
+        - `contactID`: Integer representing the contact's ID.
+        - `contactName`: String representing the contact's name.
+        - `contactNumber`: String representing the contact's phone number.
+    - **Constructor**:
+        - `Contact(String contactName, String contactNumber)`: Initializes the contact with name and number.
+        - `Contact(Integer contactID, String contactName, String contactNumber)`: Initializes the contact with ID, name, and number.
+    - **Methods**:
+        - `getContactID()`: Returns the contact's ID.
+        - `getContactName()`: Returns the contact's name.
+        - `getContactNumber()`: Returns the contact's phone number.
+        - `setContactID(int contactID)`: Sets the contact's ID.
+        - `setContactName(String contactName)`: Sets the contact's name.
+        - `setContactNumber(String contactNumber)`: Sets the contact's phone number.
+- **Nested Class**: `FastMessage`
+    - **Responsibility**: Represents a fast message with attributes FastMessageID, FastMessageTitle, and FastMessageContent.
+    - **Attributes**:
+        - `FastMessageID`: Integer representing the fast message's ID.
+        - `FastMessageTitle`: String representing the fast message's title.
+        - `FastMessageContent`: String representing the fast message's content.
+    - **Constructor**:
+        - `FastMessage(String fastMessageTitle, String fastMessageContent)`: Initializes the fast message with title and content.
+        - `FastMessage(Integer fastMessageID, String fastMessageTitle, String fastMessageContent)`: Initializes the fast message with ID, title, and content.
+    - **Methods**:
+        - `getFastMessageID()`: Returns the fast message's ID.
+        - `getFastMessageTitle()`: Returns the fast message's title.
+        - `getFastMessageContent()`: Returns the fast message's content.
+        - `setFastMessageID(int fastMessageID)`: Sets the fast message's ID.
+        - `setFastMessageTitle(String fastMessageTitle)`: Sets the fast message's title.
+        - `setFastMessageContent(String fastMessageContent)`: Sets the fast message's content.
+- **Additional Notes**:
+    - `FastMessage` class implements `Serializable` interface to enable serialization.
+    - Provides constructors and methods to access and modify attributes of contacts and fast messages.
+    - Suitable for representing contact and fast message data in an Android application.

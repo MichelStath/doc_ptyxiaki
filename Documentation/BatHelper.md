@@ -1,0 +1,41 @@
+- **Package**: `com.example.activities.ptyxiakilauncher.classes`
+- **Class Name**: `BatHelper`
+- **Responsibility**: Manages the visual representation of battery level in a TextView and an ImageView.
+- **Constructor**:
+    - `public BatHelper(TextView tv, ImageView iv)`: Initializes the BatHelper with a TextView and an ImageView.
+    - `tv`: The TextView to display battery level percentage.
+    - `iv`: The ImageView to display battery icon.
+- **Method**:
+    - `public void setBatLevel(int level)`: Sets the battery level and updates the display accordingly.
+        - `level`: The battery level in percentage.
+    - **Private Methods**:
+        - `private void batLevel1()`: Sets battery level to 1 and updates visuals.
+        - `private void batLevel2(int lvl)`: Sets battery level to 2 and updates visuals.
+        - `private void batLevel3(int lvl)`: Sets battery level to 3 and updates visuals.
+        - `private void batLevel4()`: Sets battery level to 4 and updates visuals.
+        - `private void batLevel5()`: Sets battery level to 5 and updates visuals.
+        - `private void batLevel6()`: Sets battery level to 6 and updates visuals.
+        - `private void batLevelFull()`: Sets battery level to full and updates visuals.
+        - **Audio Methods**:
+            - `private void playMusic()`: Placeholder method to play music.
+            - `private void stopMusic()`: Placeholder method to stop music.
+- **Dependencies**:
+    - `android.widget.ImageView`
+    - `android.widget.TextView`
+    - `androidx.core.content.ContextCompat`
+    - `com.example.activities.ptyxiakilauncher.R`
+- **Resource Usage**:
+    - `R.color.red`
+    - `R.color.orangered`
+    - `R.color.orange`
+    - `R.color.olive`
+    - `R.color.green`
+    - `R.color.lightgreen`
+    - `R.drawable.baseline_battery_1_bar_24`
+    - `R.drawable.baseline_battery_2_bar_24`
+    - `R.drawable.baseline_battery_3_bar_24`
+    - `R.drawable.baseline_battery_4_bar_24`
+    - `R.drawable.baseline_battery_5_bar_24`
+    - `R.drawable.baseline_battery_6_bar_24`
+    - `R.drawable.baseline_battery_full_24`
+

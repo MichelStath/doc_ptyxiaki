@@ -1,0 +1,65 @@
+- **Package**: `com.example.activities.ptyxiakilauncher.classes`
+- **Class Name**: `Helper`
+- **Responsibility**: Provides helper classes for database operations, sending SMS alerts, and composing SMS messages.
+- **Inner Classes**:
+    - **`ContactDbHelper`**:
+        - **Responsibility**: Manages database operations for contacts.
+        - **Constructor**:
+            - `public ContactDbHelper(Context context)`: Initializes the ContactDbHelper with the application context.
+                - `context`: Application context for displaying toast messages and accessing resources.
+        - **Methods**:
+            - `onCreate(SQLiteDatabase db)`: Creates the database table for storing contacts if it does not exist.
+            - `onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)`: Drops the existing table and recreates it when the database schema is upgraded.
+            - `addContact(Models.Contact contact)`: Adds a contact to the database.
+            - `getAllContacts()`: Retrieves all contacts from the database.
+            - `deleteContact(Models.Contact contact)`: Deletes a contact from the database.
+            - `deleteAllContacts()`: Deletes all contacts from the database.
+    - **`MessageDbHelper`**:
+        - **Responsibility**: Manages database operations for fast messages.
+        - **Constructor**:
+            - `public MessageDbHelper(Context context)`: Initializes the MessageDbHelper with the application context.
+                - `context`: Application context for displaying toast messages and accessing resources.
+        - **Methods**:
+            - `onCreate(SQLiteDatabase db)`: Creates the database table for storing messages if it does not exist.
+            - `onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)`: Drops the existing table and recreates it when the database schema is upgraded.
+            - `addMessage(Models.FastMessage message)`: Adds a fast message to the database.
+            - `getAllMessages()`: Retrieves all fast messages from the database.
+            - `deleteMessage(Models.FastMessage message)`: Deletes a fast message from the database.
+            - `updateMessage(Models.FastMessage message)`: Updates a fast message in the database.
+            - `deleteAllContacts()`: Deletes all fast messages from the database.
+    - **`SMSHelper`**:
+        - **Responsibility**: Provides helper methods for composing SMS messages.
+        - **Methods**:
+            - `composeSMS(Context context, String message)`: Opens the default SMS app with a predefined message.
+- **Static Methods**:
+    - **`sendAlertToContact(Models.Contact ct, String mapsUrl)`**:
+        - **Responsibility**: Sends an SOS alert SMS to a contact with a location URL.
+        - **Parameters**:
+            - `ct`: The contact to whom the SOS alert SMS will be sent.
+            - `mapsUrl`: The URL containing the location.
+    - **`composeSMS(Context context, String message)`** (inside `SMSHelper`):
+        - **Responsibility**: Opens the default SMS app with a predefined message.
+        - **Parameters**:
+            - `context`: Application context.
+            - `message`: The message to be pre-filled in the SMS app.
+- **Dependencies**:
+    - `android.content.Context`
+    - `android.content.Intent`
+    - `android.content.pm.ApplicationInfo`
+    - `android.content.pm.PackageInfo`
+    - `android.content.pm.PackageManager`
+    - `android.database.Cursor`
+    - `android.database.sqlite.SQLiteDatabase`
+    - `android.database.sqlite.SQLiteOpenHelper`
+    - `android.provider.Settings`
+    - `android.telephony.SmsManager`
+    - `android.util.Log`
+    - `android.widget.Toast`
+    - `java.util.ArrayList`
+    - `java.util.List`
+- **Resource Usage**:
+    - Uses `Toast` for displaying messages.
+- **Additional Notes**:
+    - Provides reusable database helper classes for contacts and fast messages.
+    - Provides a helper method for sending SOS alert SMS to contacts with location information.
+    - Provides a helper method for composing SMS messages.

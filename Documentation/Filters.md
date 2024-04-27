@@ -1,0 +1,32 @@
+- **Package**: `com.example.activities.ptyxiakilauncher.classes`
+- **Class Name**: `Filters`
+- **Responsibility**: Provides an input filter for limiting the number of lines and characters in an EditText.
+- **Inner Class**:
+    - `LineCountInputFilter`: Implements `InputFilter` to limit the number of lines and characters.
+        - **Constructor**:
+            - `public LineCountInputFilter(int maxLines, int maxChars, Context context)`: Initializes the LineCountInputFilter with maximum allowed lines, maximum allowed characters, and the application context.
+                - `maxLines`: Maximum allowed lines in the EditText.
+                - `maxChars`: Maximum allowed characters in the EditText.
+                - `context`: Application context for displaying toast messages.
+        - **Methods**:
+            - `filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend)`: Filters the input text to limit the number of lines and characters.
+                - `source`: The text that is being added.
+                - `start`: The start position of the text being added.
+                - `end`: The end position of the text being added.
+                - `dest`: The existing text in the EditText.
+                - `dstart`: The start position of the existing text where the new text is being added.
+                - `dend`: The end position of the existing text where the new text is being added.
+        - **Additional Notes**:
+            - Counts the occurrences of newline characters to limit the number of lines.
+            - Limits the number of characters based on the provided maximum characters limit.
+            - Displays a toast message if the maximum character limit is reached.
+- **Dependencies**:
+    - `android.content.Context`
+    - `android.text.InputFilter`
+    - `android.text.Spanned`
+    - `android.widget.Toast`
+- **Resource Usage**:
+    - No specific resources used.
+- **Additional Notes**:
+    - Provides a reusable input filter for limiting the number of lines and characters in an EditText.
+    - Shows a toast message when the maximum character limit is reached.

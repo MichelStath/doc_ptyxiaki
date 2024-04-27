@@ -1,0 +1,18 @@
+- **Class Name**: `InfoActivity`
+- **Extends**: `AppCompatActivity`
+- **Responsibility**: Manages the display of user information and provides an option to edit it.
+- **Attributes**:
+    - **SharedPreferences Keys**: Constants defining the keys used for storing and retrieving user information in SharedPreferences.
+    - `sharedpreferences`: SharedPreferences instance for storing user information.
+    - `userName`, `userSurname`, `userPhone`, `userAmka`, `userAfm`, `userIdNum`: Variables to store user information retrieved from SharedPreferences.
+    - `nameTV`, `surnameTV`, `phoneTV`, `afmTV`, `amkaTV`, `idNumTV`: TextViews for displaying user information.
+- **Methods**:
+    - `onCreate(Bundle savedInstanceState)`: Initializes the activity, sets the layout, and initializes the UI components.
+    - `onRestart()`: Overrides the `onRestart` method to refresh the activity when it is restarted.
+    - `onStart()`: Overrides the `onStart` method to check if user information is available. If not, redirects to the `InfoEditActivity` to enter user information.
+    - `editBTN(View view)`: Called when the "Edit" button is clicked. Launches the `InfoEditActivity` to edit user information.
+    - `InitializeEnvironment()`: Initializes the SharedPreferences instance, retrieves user information, and sets the TextViews with the retrieved data.
+- **Additional Notes**:
+    - The activity layout (`R.layout.activity_info`) contains TextViews for displaying user information and a button for editing the information.
+    - User information is retrieved from SharedPreferences and displayed in the corresponding TextViews.
+    - Clicking the "Edit" button launches the `InfoEditActivity`, where the user can edit their information.
